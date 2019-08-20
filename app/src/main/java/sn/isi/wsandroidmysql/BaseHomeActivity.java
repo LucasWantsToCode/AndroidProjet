@@ -271,7 +271,7 @@ public class BaseHomeActivity extends AppCompatActivity {
             } else {
                 try {
                     JSONArray response = new JSONArray(result);
-                    for(int i =0; i<=response.length(); i++){
+                    for(int i = 0; i<=response.length(); i++){
                         JSONObject rep = response.getJSONObject(i);
 
                         String resultrep = rep.getString("response");
@@ -297,6 +297,7 @@ public class BaseHomeActivity extends AppCompatActivity {
 
                             Toast.makeText(BaseHomeActivity.this, "Voici vos comptes " , Toast.LENGTH_LONG).show();
                             rest.add(offre);
+
                             MyOffreAdapter cva = new MyOffreAdapter(BaseHomeActivity.this, rest);
 
                             list.setAdapter(cva);

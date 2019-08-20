@@ -161,7 +161,6 @@ public class AddCvActivity extends AppCompatActivity {
             } else {
                 try {
                     JSONArray response = new JSONArray(result);
-                    ArrayAdapter<Domaine> domadpt = new ArrayAdapter<Domaine>(getApplicationContext(), android.R.layout.simple_list_item_1);
 
                     for(int i =0; i<=response.length(); i++){
                         JSONObject rep = response.getJSONObject(i);
@@ -177,10 +176,12 @@ public class AddCvActivity extends AppCompatActivity {
 
                             Toast.makeText(AddCvActivity.this, "Voici vos comptes " , Toast.LENGTH_LONG).show();
                             restdom.add(domaine);
+                            ArrayAdapter<Domaine> domadpt  = new ArrayAdapter<Domaine>(getApplicationContext(), android.R.layout.simple_list_item_1);
+                            for(Domaine d: restdom){
+                                domadpt.add(d);
+
+                            }
                             domai.setAdapter(domadpt);
-                            domadpt.add(domaine);
-                            MyAdapterDomaine domaines = new MyAdapterDomaine(AddCvActivity.this, restdom);
-                            listdom.setAdapter(domaines);
 
                         } else {
                             Toast.makeText(AddCvActivity.this, "Parametres de connexion non valides", Toast.LENGTH_LONG).show();

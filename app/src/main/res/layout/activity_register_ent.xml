@@ -48,6 +48,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/passwordtxte"
         android:layout_marginBottom="10dp"
+        android:password="true"
         />
 
     <Button

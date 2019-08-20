@@ -36,6 +36,7 @@ public class AddOfferActivity extends AppCompatActivity {
     private Spinner domai;
     private Button ajout;
     private String entmail;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -107,7 +108,7 @@ public class AddOfferActivity extends AppCompatActivity {
                     String resultrep = rep.getString("response");
                     if(resultrep.equals("OK")){
                         Toast.makeText(AddOfferActivity.this, "Données correctes " , Toast.LENGTH_LONG).show();
-                        Intent i = new Intent(AddOfferActivity.this, BaseHomeActivity.class);
+                        Intent i = new Intent(AddOfferActivity.this, ListCvBActivity.class);
                         i.putExtra("entmail", entmail);
 
                         startActivity(i);
@@ -151,7 +152,7 @@ public class AddOfferActivity extends AppCompatActivity {
             } else {
                 try {
                     JSONArray response = new JSONArray(result);
-                    ArrayAdapter<Domaine> domadpt = new ArrayAdapter<Domaine>(getApplicationContext(), android.R.layout.simple_list_item_1);
+
 
                     for(int i =0; i<=response.length(); i++){
                         JSONObject rep = response.getJSONObject(i);
@@ -167,14 +168,18 @@ public class AddOfferActivity extends AppCompatActivity {
 
                             Toast.makeText(AddOfferActivity.this, "Voici vos comptes " , Toast.LENGTH_LONG).show();
                             restdom.add(domaine);
+                            ArrayAdapter<Domaine> domadpt  = new ArrayAdapter<Domaine>(getApplicationContext(), android.R.layout.simple_list_item_1);
+                            for(Domaine d: restdom){
+                                domadpt.add(d);
+
+                            }
                             domai.setAdapter(domadpt);
-                            domadpt.add(domaine);
-                            MyAdapterDomaine domaines = new MyAdapterDomaine(AddOfferActivity.this, restdom);
-                            listdom.setAdapter(domaines);
 
                         } else {
                             Toast.makeText(AddOfferActivity.this, "Parametres de connexion non valides", Toast.LENGTH_LONG).show();
                         }
+
+
 
                     }
 

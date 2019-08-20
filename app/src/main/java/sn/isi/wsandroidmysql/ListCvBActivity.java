@@ -86,7 +86,7 @@ public class ListCvBActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        createPdf(idcv, formationcv.toUpperCase(), competencecv.toUpperCase(), idDem, idDom, passioncv);
+                        createPdf(idcv, formationcv.toUpperCase(), competencecv.toUpperCase(), idDem, idDom, passioncv.toUpperCase());
 
                     }
                 });
@@ -130,7 +130,7 @@ public class ListCvBActivity extends AppCompatActivity {
         canvas.drawText(String.valueOf(someint3), 90, 180, paint);
         canvas.drawText("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++", 05, 190, paint);
         canvas.drawText("Passion:", 05, 200, paint);
-        canvas.drawText(sometext2, 90, 200, paint);
+        canvas.drawText(sometext3, 90, 200, paint);
         //canvas.drawt
         // finish the page
         document.finishPage(page);
