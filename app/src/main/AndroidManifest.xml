@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="sn.isi.wsandroidmysql">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".ListFavActivity" />
+        <activity android:name=".AddOfferActivity" />
+        <activity
+            android:name=".ListCvBActivity"
+            android:label="@string/title_activity_list_cv_b"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".RegisterEntActivity" />
+        <activity android:name=".LoginEntrepriseActivity" />
+        <activity android:name=".CvUpdateActivity" />
+        <activity
+            android:name=".BaseHomeActivity"
+            android:label="@string/title_activity_base_home"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AddCvActivity" />
+        <activity
+            android:name=".DemHomeActivity"
+            android:label="@string/title_activity_dem_home" />
+        <activity android:name=".LoginDemActivity" />
+        <activity android:name=".RegisterDemActivity" />
+        <activity android:name=".FIndActivity" />
+        <activity android:name=".GetSoldeActivity" />
+        <activity android:name=".ListCompteActivity" />
+        <activity android:name=".FormulaireAjoutActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+    </application>
+
+</manifest>
